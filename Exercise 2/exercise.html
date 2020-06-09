@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Manipulating HTML document</title>
+	<link rel="stylesheet" href="styles.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<header>
+		<h1>jQuery Page Modification</h1>
+	</header>
+	
+	<article>
+		
+		<form id="myform" action="#" method="get">
+			<label for="msg">Your text:</label>
+			<input type="text" id="msg" name="msg" value="HELLO!" />
+			
+			<label><input type="checkbox" id="animate" name="animate" checked="checked" /> animate?</label>
+			
+			<button>Start</button>
+		</form>
+		
+	</article>
+
+	<footer>
+		<p><a name="test" href="http://www.codefactory.com/">&copy; codefactory</a></p>
+	</footer>
+
+	<script>
+		$(document).ready(function(){
+
+			// Exercise 1
+			///////////////////////////////////////////////////////////////////////
+			const form = $("#myform");
+
+			//removes the form of the page
+			// form.css("display","none");
+
+			// Exercise 2
+			///////////////////////////////////////////////////////////////////////
+
+			// Adds 5 new div elements to the article element
+			const article = $("article");
+			 for (let i = 0; i < 5; i++) {
+				 article.append("<div>TEST</div>");
+				 $("div").addClass("box");
+			 }
+
+			 // Exercise 3
+			///////////////////////////////////////////////////////////////////////
+			
+			const inputs = $("input:text");
+			
+			inputs.val("Search for...");
+
+			 // Exercise 4
+			///////////////////////////////////////////////////////////////////////
+
+			 $("p a").attr("href", "https://codefactory.wien/de/home/")
+			 $("p a").attr("name", "test_test")
+
+			 ///////////////////////////////////////////////////////////////////////
+		})
+	</script>
+
+	<!-- my script -->
+	<script src="myscript.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+</body>
+</html>
